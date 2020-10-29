@@ -17,20 +17,19 @@
  > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
 
 ## Project Description
- > Your project description should summarize the project you are proposing. Be sure to include
- > * Why is it important or interesting to you?
- > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- >   * [toolname](link) - Short description
- > * What will be the input/output of your project?
+### Why is it important or interesting to you?
+  We decided to do Snake as our project because it seemed like an interesting choice and gamefication of learning is something we all as a group wholeheartedly agree with. We want to be able to make something we could use in a fun way,  while at the same time keeping the complexity.
+ ### What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
+ * C++ - Language used for implementation of game functionality.
+ * OpenGL - Graphics API used to render game.
+ * GLFW - Library used with OpenGL to handle I/O and creation of OpenGL instances.
+ ### What will be the input/output of your project?
+ * Input - Keystrokes made by user.
+ * Output - Movement of snake, display of game.
  ### What are the three design patterns you will be using?
  1. **Composite** - We want to have a base class for our graphic, since we will be re-drawing the graphic every frame. The graphic itself will consist of three subclasses - the snake, the food, and the border of the playing space. These will be drawn to the screen differently, based on which class calls the draw function.
  2. **Visitor** - We will need to implement some functionality to move the snake. As the snake eats the food and grows, we will have to slightly change how the snake moves across the screen. Using the Visitor pattern, we can tweak the snake’s movement without affecting the snake class itself.
  3. **Singleton** - There will only be a single instance of the snake being drawn over the course of the game. This snake will change in size and movement, but it will still be the same snake. This pattern will ensure that we use the same snake object every draw call.
-
-This project will be implemented mainly in C++. Given time constraints, we may or may not be able to add a GUI feature to make the user experience much smoother.
-
-We decided to do Snake as our project because it seemed like an interesting choice and gamefication of learning is something we all as a group wholeheartedly agree with. We want to be able to make something we could use in a fun way,  while at the same time keeping the complexity.
-
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
