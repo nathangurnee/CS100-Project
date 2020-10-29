@@ -2,12 +2,12 @@
  > Prompt text is any lines beginning with "\<"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
 # Snake
- > Your author list below should include links to all members GitHub and should begin with a "\<" (remove existing author).
+ ## Authors:
+ [Julia Bayless](https://github.com/jbayl006)
+ [Nathan Gurnee](https://github.com/nathangurnee)
+ [Sulaiman Ahmed](https://github.com/sulaiman-ahmed)
  
- > Authors: \<[Jeffrey McDaniel](https://github.com/jmcda001)\>
- 
- > You will be forming a group of **THREE** students and work on an interesting project that you will propose yourself (in this `README.md` document). You can pick any project that you'd like, but it needs ot implement three design patterns. Each of the members in a group is expected to work on at least one design pattern and its test cases. You can, of course, help each other, but it needs to be clear who will be responsible for which pattern and for which general project features.
- 
+
  > ## Expectations
  > * Incorporate **three** distinct design patterns, *two* of the design patterns need to be taught in this course:
  >   * Composite, Strategy, Abstract Factory, Visitor
@@ -26,6 +26,11 @@
  1. **Composite** - We want to have a base class for our graphic, since we will be re-drawing the graphic every frame. The graphic itself will consist of three subclasses - the snake, the food, and the border of the playing space. These will be drawn to the screen differently, based on which class calls the draw function.
  2. **Visitor** - We will need to implement some functionality to move the snake. As the snake eats the food and grows, we will have to slightly change how the snake moves across the screen. Using the Visitor pattern, we can tweak the snake’s movement without affecting the snake class itself.
  3. **Singleton** - There will only be a single instance of the snake being drawn over the course of the game. This snake will change in size and movement, but it will still be the same snake. This pattern will ensure that we use the same snake object every draw call.
+
+This project will be implemented mainly in C++. Given time constraints, we may or may not be able to add a GUI feature to make the user experience much smoother.
+
+We decided to do Snake as our project because it seemed like an interesting choice and gamefication of learning is something we all as a group wholeheartedly agree with. We want to be able to make something we could use in a fun way,  while at the same time keeping the complexity.
+
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
