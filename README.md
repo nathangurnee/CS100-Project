@@ -16,7 +16,7 @@
  * Output - Movement of snake, display of game.
  ### What are the three design patterns you will be using?
  1. **Composite** - We want to have a base class for our graphic, since we will be re-drawing the graphic every frame. The graphic itself will consist of three subclasses - the snake, the food, and the border of the playing space. These will be drawn to the screen differently, based on which class calls the draw function.
- 2. **Visitor** - We will need to implement some functionality to move the snake. As the snake eats the food and grows, we will have to slightly change how the snake moves across the screen. Using the Visitor pattern, we can tweak the snake’s movement without affecting the snake class itself.
+ 2. **Strategy** - The snake and the food will both move around the game board. They each have a unique movement, and the strategy pattern will allow us to alter a move method depending on the object.
  3. **Singleton** - There will only be a single instance of the snake being drawn over the course of the game. This snake will change in size and movement, but it will still be the same snake. This pattern will ensure that we use the same snake object every draw call.
 
  > ## Phase II
