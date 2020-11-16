@@ -10,7 +10,7 @@
  ### What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
  * C++ - Language used for implementation of game functionality.
  * OpenGL - Graphics API used to render game.
- * GLFW - Library used with OpenGL to handle I/O and creation of OpenGL instances.
+ * SDL2 - Library used with OpenGL to handle I/O and creation of OpenGL instances.
  ### What will be the input/output of your project?
  * Input - Keystrokes made by user.
  * Output - Movement of snake, display of game.
@@ -30,7 +30,13 @@
  >   * Create smaller development tasks as issues and assign them to team members. Place these in the `Backlog` column.
  >   * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
 ## Class Diagram
- > Include a class diagram(s) for each design pattern and a description of the diagram(s). This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper OMT notation (as discussed in the course slides). You may combine multiple design patterns into one diagram if you'd like, but it needs to be clear which portion of the diagram represents which design pattern (either in the diagram or in the description). 
+ ![Class Diagram](/images/class-diagram.png)
+ 
+The `Graphic` abstract base class is the Component for our Composite design pattern. This contains the virtual `draw` method that is implemented by our derived classes. The `Board` class, the Composite, contains all the functionality of the game. Its `draw` method acts as the game loop, handling input and drawing the snake and food to the window. The `Snake` and `Food` Leaf classes are responsible for the attributes of the snake and food respectively. Their `draw` methods focus on their rendering set-up so the `Board` class can draw them during the game loop.
+
+The `Snake` class utilizes the Singleton design pattern. Its private constructor and static `getSnake` method allows only a single `Snake` instance to be created during the game.
+
+The Strategy pattern is used for the `move` method of the `Snake` and the `Food` classes. The Move Strategy differs depending on the type that is calling it, since each class features a unique movement pattern - the food is randomly placed in a spot on the board, and the snake is moved through keyboard input.  
  
  > ## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
