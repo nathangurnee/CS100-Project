@@ -19,16 +19,6 @@
  2. **Strategy** - The snake and the food will both move around the game board. They each have a unique movement, and the strategy pattern will allow us to alter a move method depending on the object.
  3. **Singleton** - There will only be a single instance of the snake being drawn over the course of the game. This snake will change in size and movement, but it will still be the same snake. This pattern will ensure that we use the same snake object every draw call.
 
- > ## Phase II
- > In addition to completing the "Class Diagram" section below, you will need to 
- > * Set up your GitHub project board as a Kanban board for the project. It should have columns that map roughly to 
- >   * Backlog, TODO, In progress, In testing, Done
- >   * You can change these or add more if you'd like, but we should be able to identify at least these.
- > * There is no requirement for automation in the project board but feel free to explore those options.
- > * Create an "Epic" (note) for each feature and each design pattern and assign them to the appropriate team member. Place these in the `Backlog` column
- > * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
- >   * Create smaller development tasks as issues and assign them to team members. Place these in the `Backlog` column.
- >   * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
 ## Class Diagram
  ![Class Diagram](/images/class-diagram.png)
  
