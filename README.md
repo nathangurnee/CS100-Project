@@ -10,7 +10,7 @@
  ### What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
  * C++ - Language used for implementation of game functionality.
  * OpenGL - Graphics API used to render game.
- * SDL2 - Library used with OpenGL to handle I/O and creation of OpenGL instances.
+ * Simple DirectMedia Layer - Library used with OpenGL to handle I/O and creation of OpenGL instances.
  ### What will be the input/output of your project?
  * Input - Keystrokes made by user.
  * Output - Movement of snake, display of game.
