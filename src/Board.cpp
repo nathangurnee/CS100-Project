@@ -39,7 +39,16 @@ void Board::draw()
     {
         if (SDL_PollEvent(&event))
         {
-            if (event.type == SDL_QUIT) { play = false; } // Hit 'X' button
+            if (event.type == SDL_QUIT) // Hit 'X' button
+            {
+                play = false;
+            } else if (event.type = SDL_KEYDOWN)
+            {
+                if (event.key.keysym.sym == SDLK_ESCAPE) // Hit 'escape' key
+                {
+                    play = false;
+                }
+            }
         }
 
         // Sets drawing color of entire window
