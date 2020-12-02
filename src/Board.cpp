@@ -23,8 +23,6 @@ Board::Board() : Graphic()
     snake = new Snake();
     
     // Creates pineapple
-
-
     pineapple = new Pineapple();
 }
 
@@ -45,17 +43,38 @@ void Board::draw()
     {
         if (SDL_PollEvent(&event))
         {
-            if (event.type == SDL_QUIT) // Hit 'X' button
+            if (event.type == SDL_QUIT) { play = false; }
+            
+            // State of keyboard
+            // Holds which keys have been pressed
+            const Uint8* state = SDL_GetKeyboardState(NULL);
+
+            if (state[SDL_SCANCODE_UP])
+            {
+                snake->setDirection("up");
+            } else if(state[SDL_SCANCODE_DOWN])
+            {
+                snake->setDirection("down");
+            } else if(state[SDL_SCANCODE_LEFT])
+            {
+                snake->setDirection("left");
+            } else if(state[SDL_SCANCODE_RIGHT])
+            {
+                snake->setDirection("right");
+            } else if (state[SDL_SCANCODE_ESCAPE])
             {
                 play = false;
-            } else if (event.type = SDL_KEYDOWN)
-            {
-                if (event.key.keysym.sym == SDLK_ESCAPE) // Hit 'escape' key
-                {
-                    play = false;
-                }
             }
         }
+
+        // Wraps snake if it goes off screen
+        // TEMPORARY
+        if (snake->getX() > 720) { snake->setX(0); }
+        else if (snake->getX() < 0) { snake->setX(720); }
+        else if (snake->getY() > 720) { snake->setY(0); }
+        else if (snake->getY() < 0) { snake->setY(720); }
+
+        snake->update(); // Updates snake's position since last draw call
 
         // Sets drawing color of entire window
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
@@ -73,8 +92,8 @@ void Board::draw()
         // pineapple->setRenderer(renderer);
         pineapple->setRenderer(renderer);
 
-        // food->draw();
         pineapple->draw();
+        
         // Renders to window
         SDL_RenderPresent(renderer);
     }

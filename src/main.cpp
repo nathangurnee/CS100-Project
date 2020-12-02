@@ -6,9 +6,5 @@ int main()
 {
     srand((unsigned)time(0));
     Graphic* game = new Board();
-
     game->draw();
-
-    delete game;
-    game = NULL;
 }
