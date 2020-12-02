@@ -11,6 +11,7 @@ public:
     virtual void draw();
 private:
     Graphic* snake;
+    Graphic* pineapple;
     SDL_Window* window; // Where we're drawing to
     SDL_Renderer* renderer; // What does the drawing
 };

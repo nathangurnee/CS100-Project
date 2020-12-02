@@ -1,5 +1,6 @@
 #include "../include/Board.h"
 #include "../include/Snake.h"
+#include "../include/Pineapple.h"
 
 // Dimensions of window
 const int WINDOW_WIDTH = 720;
@@ -8,7 +9,6 @@ const int WINDOW_HEIGHT = 720;
 Board::Board() : Graphic()
 {
     // Initializes SDL library
-    SDL_Init(SDL_INIT_EVERYTHING);
 
     // Creates window & renderer
     // window = little window that pops up
@@ -20,6 +20,11 @@ Board::Board() : Graphic()
    
     // Creates snake
     snake = new Snake();
+    
+    // Creates pineapple
+
+
+    pineapple = new Pineapple();
 }
 
 Board::~Board()
@@ -64,10 +69,11 @@ void Board::draw()
         // Draws snake at selected location (100, 100)
         snake->draw();
 
-        // food->setRenderer(renderer);
+        // pineapple->setRenderer(renderer);
+        pineapple->setRenderer(renderer);
 
         // food->draw();
-
+        pineapple->draw();
         // Renders to window
         SDL_RenderPresent(renderer);
     }

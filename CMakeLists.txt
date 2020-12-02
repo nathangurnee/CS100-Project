@@ -12,6 +12,7 @@ add_executable(snake
     src/main.cpp
     src/Board.cpp
     src/Snake.cpp
+    src/Pineapple.cpp
 )
 
 target_link_libraries(snake ${SDL2_LIBRARIES})
