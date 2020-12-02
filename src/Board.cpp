@@ -9,6 +9,7 @@ const int WINDOW_HEIGHT = 720;
 Board::Board() : Graphic()
 {
     // Initializes SDL library
+    SDL_Init(SDL_INIT_EVERYTHING);
 
     // Creates window & renderer
     // window = little window that pops up
