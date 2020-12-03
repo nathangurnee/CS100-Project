@@ -9,7 +9,7 @@ public:
     Snake();
     virtual void setRenderer(SDL_Renderer*);
     virtual void draw();
-    virtual void update();
+    virtual void update(Graphic*);
 private:
     SDL_Renderer* renderer;
 };

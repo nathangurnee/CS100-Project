@@ -16,7 +16,7 @@ public:
     Graphic() {}
     virtual void setRenderer(SDL_Renderer*) {}
     virtual void draw() = 0;
-    virtual void update() {}
+    virtual void update(Graphic*) {}
     void setMovement(Movement* movement) { this->movement = movement; }
     double x, y; // Coordinates
     std::string direction;

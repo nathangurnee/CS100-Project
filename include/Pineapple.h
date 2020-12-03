@@ -13,6 +13,7 @@ public:
     Pineapple();
     virtual void setRenderer(SDL_Renderer*);
     virtual void draw();
+    virtual void update(Graphic*);
 private:
     SDL_Renderer* renderer; // What does the drawing
 };
