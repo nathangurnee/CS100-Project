@@ -4,8 +4,8 @@
 // Spawn point of snake
 // Point at top left of snake rectangle
 // 100 pixels across & down from top left of window
-const double SNAKE_SPAWN_X = 100;
-const double SNAKE_SPAWN_Y = 100;
+const double SNAKE_SPAWN_X = 360;
+const double SNAKE_SPAWN_Y = 330;
 
 // Dimensions of snake
 const int SNAKE_WIDTH = 16;
@@ -45,6 +45,11 @@ void Snake::update(Graphic* pineapple)
     // Check for collisions with:
     // - pineapple
     // - walls
+    	if (x + 16 > 720 || y + 16 > 720 || x < 0 || y < 0) {
+		x = 360;
+		y = 330;
+		direction = "";
+	}
     // - itself
 
     setMovement(new SnakeMovement());
