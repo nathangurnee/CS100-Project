@@ -17,13 +17,9 @@ public:
     virtual void setRenderer(SDL_Renderer*) {}
     virtual void draw() = 0;
     virtual void update() {}
-    virtual double getX() const {}
-    virtual double getY() const {}
-    virtual std::string getDirection() const {}
-    virtual void setX(double) {}
-    virtual void setY(double) {}
-    virtual void setDirection(const std::string&) {}
     void setMovement(Movement* movement) { this->movement = movement; }
+    double x, y; // Coordinates
+    std::string direction;
 protected:
     Movement* movement;
 };

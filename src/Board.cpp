@@ -51,16 +51,16 @@ void Board::draw()
 
             if (state[SDL_SCANCODE_UP])
             {
-                snake->setDirection("up");
-            } else if(state[SDL_SCANCODE_DOWN])
+                snake->direction = "up";
+            } else if (state[SDL_SCANCODE_DOWN])
             {
-                snake->setDirection("down");
-            } else if(state[SDL_SCANCODE_LEFT])
+                snake->direction = "down";
+            } else if (state[SDL_SCANCODE_LEFT])
             {
-                snake->setDirection("left");
-            } else if(state[SDL_SCANCODE_RIGHT])
+                snake->direction = "left";
+            } else if (state[SDL_SCANCODE_RIGHT])
             {
-                snake->setDirection("right");
+                snake->direction = "right";
             } else if (state[SDL_SCANCODE_ESCAPE])
             {
                 play = false;
@@ -69,10 +69,10 @@ void Board::draw()
 
         // Wraps snake if it goes off screen
         // TEMPORARY
-        if (snake->getX() > 720) { snake->setX(0); }
-        else if (snake->getX() < 0) { snake->setX(720); }
-        else if (snake->getY() > 720) { snake->setY(0); }
-        else if (snake->getY() < 0) { snake->setY(720); }
+        if (snake->x > 720) { snake->x = 0; }
+        else if (snake->x < 0) { snake->x = 720; }
+        else if (snake->y > 720) { snake->y = 0; }
+        else if (snake->y < 0) { snake->y = 720; }
 
         snake->update(); // Updates snake's position since last draw call
 
@@ -91,8 +91,9 @@ void Board::draw()
 
         // Checks whether the snake has collided with the pineapple 
         // and creates a new one if true
-        if((snake->getX() +16 >= pineapple->getX() && snake->getY() + 16 >= pineapple->getY())
-            && (snake->getX() <= pineapple->getX() + 10 && snake->getY() <= pineapple->getY() + 10)) {
+        if((snake->x +16 >= pineapple->x && snake->y + 16 >= pineapple->y)
+            && (snake->x <= pineapple->x + 10 && snake->y <= pineapple->y + 10))
+            {
                 pineapple = new Pineapple();
             }
 

@@ -1,9 +1,21 @@
 #include "../include/Snake.h"
 #include "../include/SnakeMovement.h"
 
+// Spawn point of snake
+// Point at top left of snake rectangle
+// 100 pixels across & down from top left of window
+const double SNAKE_SPAWN_X = 100;
+const double SNAKE_SPAWN_Y = 100;
+
 // Dimensions of snake
 const int SNAKE_WIDTH = 16;
 const int SNAKE_HEIGHT = 16;
+
+Snake::Snake() : Graphic()
+{
+    x = SNAKE_SPAWN_X;
+    y = SNAKE_SPAWN_Y;
+}
 
 void Snake::setRenderer(SDL_Renderer* renderer)
 {
@@ -32,9 +44,4 @@ void Snake::update()
 {
     setMovement(new SnakeMovement());
     movement->move(this);
-}
-
-void Snake::setDirection(const std::string& direction)
-{
-    this->direction = direction;
 }

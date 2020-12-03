@@ -2,25 +2,17 @@
 
 void SnakeMovement::move(Graphic* snake)
 {
-    double y = snake->getY();
-    double x = snake->getX();
-    std::string direction = snake->getDirection();
-    
-    if (direction == "up")
+    if (snake->direction == "up")
     {
-        y -= SPEED;
-        snake->setY(y);
-    } else if (direction == "down")
+        snake->y -= SPEED;
+    } else if (snake->direction == "down")
     {
-        y += SPEED;
-        snake->setY(y);
-    } else if (direction == "left")
+        snake->y += SPEED;
+    } else if (snake->direction == "left")
     {
-        x -= SPEED;
-        snake->setX(x);
-    } else if (direction == "right")
+        snake->x -= SPEED;
+    } else if (snake->direction == "right")
     {
-        x += SPEED;
-        snake->setX(x);
+        snake->x += SPEED;
     }
 }
