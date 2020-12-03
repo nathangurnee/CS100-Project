@@ -6,7 +6,7 @@
 #include "Movement.h"
 
 // Speed of the snake
-const double SPEED = 0.25;
+const double SPEED = 2.5;
 
 class Movement; // Forward declare Movement class to make member variable
 
