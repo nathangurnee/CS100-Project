@@ -27,3 +27,16 @@ void Pineapple::draw()
     // Colors the pineapple
     SDL_RenderFillRect(renderer, &location);
 }
+
+void Pineapple::update(Graphic* snake)
+{
+    // Checks whether the snake has collided with the pineapple 
+    // and creates a new one if true
+    if((snake->x +16 >= x && snake->y + 16 >= y)
+        && (snake->x <= x + 10 && snake->y <= y + 10))
+    {
+        // Put this in PineappleMovement class
+        x = 10 + rand() % 704; 
+        y = 10 + rand() % 704;
+    }
+}

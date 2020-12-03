@@ -40,8 +40,13 @@ void Snake::draw()
     SDL_RenderFillRect(renderer, &location);
 }
 
-void Snake::update()
+void Snake::update(Graphic* pineapple)
 {
+    // Check for collisions with:
+    // - pineapple
+    // - walls
+    // - itself
+
     setMovement(new SnakeMovement());
     movement->move(this);
 }

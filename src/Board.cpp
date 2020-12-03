@@ -1,7 +1,7 @@
 #include "../include/Board.h"
 #include "../include/Snake.h"
 #include "../include/Pineapple.h"
-#include <iostream>
+
 // Dimensions of window
 const int WINDOW_WIDTH = 720;
 const int WINDOW_HEIGHT = 720;
@@ -73,8 +73,9 @@ void Board::draw()
         else if (snake->x < 0) { snake->x = 720; }
         else if (snake->y > 720) { snake->y = 0; }
         else if (snake->y < 0) { snake->y = 720; }
-
-        snake->update(); // Updates snake's position since last draw call
+        
+        // Updates snake's position since last draw call
+        snake->update(pineapple);
 
         // Sets drawing color of entire window
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
@@ -89,13 +90,8 @@ void Board::draw()
         // Draws snake at selected location (100, 100)
         snake->draw();
 
-        // Checks whether the snake has collided with the pineapple 
-        // and creates a new one if true
-        if((snake->x +16 >= pineapple->x && snake->y + 16 >= pineapple->y)
-            && (snake->x <= pineapple->x + 10 && snake->y <= pineapple->y + 10))
-            {
-                pineapple = new Pineapple();
-            }
+        // Updates pineapple's position since last draw call
+        pineapple->update(snake);
 
         // pineapple->setRenderer(renderer);
         pineapple->setRenderer(renderer);
