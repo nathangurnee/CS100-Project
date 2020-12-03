@@ -78,7 +78,7 @@ void Board::draw()
         snake->update(pineapple);
 
         // Sets drawing color of entire window
-        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+        SDL_SetRenderDrawColor(renderer, 120, 188, 188, 255);
 
         // Clears window to desired color
         SDL_RenderClear(renderer);
