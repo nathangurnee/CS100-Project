@@ -96,6 +96,8 @@ void Board::draw()
         
         // Renders to window
         SDL_RenderPresent(renderer);
+
+        SDL_Delay(10);
     }
 
     // Deletes any SDL objects in use
