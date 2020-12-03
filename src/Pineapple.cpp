@@ -4,6 +4,12 @@
 const int PINEAPPLE_WIDTH = 10;
 const int PINEAPPLE_HEIGHT = 10;
 
+Pineapple::Pineapple() : Graphic(), renderer(NULL)
+{
+    x = 10 + rand() % 704; 
+    y = 10 + rand() % 704;
+}
+
 void Pineapple::setRenderer(SDL_Renderer* renderer)
 {
     this->renderer = renderer;
