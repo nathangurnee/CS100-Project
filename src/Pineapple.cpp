@@ -1,4 +1,5 @@
 #include "../include/Pineapple.h"
+#include "../include/PineappleMovement.h"
 
 // Dimensions of pineapple
 const int PINEAPPLE_WIDTH = 10;
@@ -35,8 +36,7 @@ void Pineapple::update(Graphic* snake)
     if((snake->x +16 >= x && snake->y + 16 >= y)
         && (snake->x <= x + 10 && snake->y <= y + 10))
     {
-        // Put this in PineappleMovement class
-        x = 10 + rand() % 704; 
-        y = 10 + rand() % 704;
+        setMovement(new PineappleMovement());
+        movement->move(this);
     }
 }
