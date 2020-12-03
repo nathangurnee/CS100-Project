@@ -45,6 +45,10 @@ void Snake::update(Graphic* pineapple)
     // Check for collisions with:
     // - pineapple
     // - walls
+    if(x + 16 > 720 || y + 16 > 720 || x < 0 || y < 0) {
+            x = 100;
+            y = 100;
+        }
     // - itself
 
     setMovement(new SnakeMovement());
