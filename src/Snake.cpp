@@ -34,7 +34,7 @@ void Snake::draw()
 
     // Sets color of snake (white)
     // r, g, b, alpha (opacity)
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 
     // Colors the snake
     SDL_RenderFillRect(renderer, &location);
