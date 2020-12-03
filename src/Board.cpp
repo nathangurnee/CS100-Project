@@ -49,16 +49,16 @@ void Board::draw()
             // Holds which keys have been pressed
             const Uint8* state = SDL_GetKeyboardState(NULL);
 
-            if (state[SDL_SCANCODE_UP])
+            if (state[SDL_SCANCODE_UP] && snake->direction != "down")
             {
                 snake->direction = "up";
-            } else if (state[SDL_SCANCODE_DOWN])
+            } else if (state[SDL_SCANCODE_DOWN] && snake->direction != "up")
             {
                 snake->direction = "down";
-            } else if (state[SDL_SCANCODE_LEFT])
+            } else if (state[SDL_SCANCODE_LEFT] && snake->direction != "right")
             {
                 snake->direction = "left";
-            } else if (state[SDL_SCANCODE_RIGHT])
+            } else if (state[SDL_SCANCODE_RIGHT] && snake->direction != "left")
             {
                 snake->direction = "right";
             } else if (state[SDL_SCANCODE_ESCAPE])
