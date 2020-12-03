@@ -11,15 +11,14 @@ class Pineapple: public Graphic
 {
 public:
     Pineapple()
-        : Graphic(), renderer(NULL) {
-            x = rand() % 720;
-            y = rand() % 720;
-        }
+        : Graphic(), renderer(NULL), x(10 + rand() % 704), y(10 + rand() % 704) {}
     virtual void setRenderer(SDL_Renderer*);
     virtual void draw();
+    virtual double getX() const {return x;}
+    virtual double getY() const {return y;}
 private:
     SDL_Renderer* renderer; // What does the drawing
-    int x, y; // Coordinates
+    double x, y; // Coordinates
 };
 
 #endif

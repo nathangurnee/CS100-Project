@@ -1,7 +1,7 @@
 #include "../include/Board.h"
 #include "../include/Snake.h"
 #include "../include/Pineapple.h"
-
+#include <iostream>
 // Dimensions of window
 const int WINDOW_WIDTH = 720;
 const int WINDOW_HEIGHT = 720;
@@ -88,6 +88,13 @@ void Board::draw()
 
         // Draws snake at selected location (100, 100)
         snake->draw();
+
+        // Checks whether the snake has collided with the pineapple 
+        // and creates a new one if true
+        if((snake->getX() +16 >= pineapple->getX() && snake->getY() + 16 >= pineapple->getY())
+            && (snake->getX() <= pineapple->getX() + 10 && snake->getY() <= pineapple->getY() + 10)) {
+                pineapple = new Pineapple();
+            }
 
         // pineapple->setRenderer(renderer);
         pineapple->setRenderer(renderer);
