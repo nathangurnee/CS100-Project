@@ -66,13 +66,6 @@ void Board::draw()
                 play = false;
             }
         }
-
-        // Wraps snake if it goes off screen
-        // TEMPORARY
-        if (snake->x > 720) { snake->x = 0; }
-        else if (snake->x < 0) { snake->x = 720; }
-        else if (snake->y > 720) { snake->y = 0; }
-        else if (snake->y < 0) { snake->y = 720; }
         
         // Updates snake's position since last draw call
         snake->update(pineapple);
