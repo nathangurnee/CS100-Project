@@ -1,10 +1,15 @@
 #include "../include/Board.h"
 #include "../include/Snake.h"
 #include "../include/Pineapple.h"
+#include "../include/Image.h"
 
 // Dimensions of window
 const int WINDOW_WIDTH = 720;
 const int WINDOW_HEIGHT = 720;
+
+// Size of image
+const int IMAGE_WIDTH = 50;
+const int IMAGE_HEIGHT = 50;
 
 Board::Board() : Graphic()
 {
@@ -15,6 +20,12 @@ Board::Board() : Graphic()
     // window = little window that pops up
     // renderer = generates the image thats on the window
     SDL_CreateWindowAndRenderer(WINDOW_WIDTH, WINDOW_HEIGHT, 0, &window, &renderer);
+
+    // Creates image object containing image file
+    Image* image = Image::getImage("BobImg.bmp");
+
+    // Creates a texture from image
+    texture = SDL_CreateTextureFromSurface(renderer, image->surface);
     
     // Gives window a name
     SDL_SetWindowTitle(window, "Snake");
@@ -28,6 +39,9 @@ Board::Board() : Graphic()
 
 Board::~Board()
 {
+    // Deletes texture
+    SDL_DestroyTexture(texture);
+
     // Gets rid of window & render
     SDL_DestroyWindow(window);
     SDL_DestroyRenderer(renderer);
@@ -67,13 +81,6 @@ void Board::draw()
             }
         }
 
-        // Wraps snake if it goes off screen
-        // TEMPORARY
-        if (snake->x > 720) { snake->x = 0; }
-        else if (snake->x < 0) { snake->x = 720; }
-        else if (snake->y > 720) { snake->y = 0; }
-        else if (snake->y < 0) { snake->y = 720; }
-        
         // Updates snake's position since last draw call
         snake->update(pineapple);
 
@@ -90,13 +97,24 @@ void Board::draw()
         // Draws snake at selected location (100, 100)
         snake->draw();
 
+        // Places image in location of pineapple
+        SDL_Rect imageLocation = {
+            static_cast<int>(pineapple->x),
+            static_cast<int>(pineapple->y),
+            IMAGE_WIDTH,
+            IMAGE_HEIGHT
+        };
+
+        // Gives renderer the image
+        SDL_RenderCopy(renderer, texture, NULL, &imageLocation);
+
         // Updates pineapple's position since last draw call
         pineapple->update(snake);
 
         // pineapple->setRenderer(renderer);
         pineapple->setRenderer(renderer);
 
-        pineapple->draw();
+        //pineapple->draw();
         
         // Renders to window
         SDL_RenderPresent(renderer);

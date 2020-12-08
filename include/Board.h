@@ -14,6 +14,7 @@ private:
     Graphic* pineapple;
     SDL_Window* window; // Where we're drawing to
     SDL_Renderer* renderer; // What does the drawing
+    SDL_Texture* texture; // Texture of image
 };
 
 #endif
