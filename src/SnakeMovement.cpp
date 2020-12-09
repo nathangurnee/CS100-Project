@@ -2,17 +2,23 @@
 
 void SnakeMovement::move(Graphic* snake)
 {
+    snake->body.pop_back();
+    double x = snake->body[0].first;
+    double y = snake->body[0].second;
+
     if (snake->direction == "up")
-    {
-        snake->y -= SPEED;
+    { 
+        y -= SPEED;
     } else if (snake->direction == "down")
     {
-        snake->y += SPEED;
+        y += SPEED;
     } else if (snake->direction == "left")
     {
-        snake->x -= SPEED;
+        x -= SPEED;
     } else if (snake->direction == "right")
     {
-        snake->x += SPEED;
+        x += SPEED;
     }
+
+    snake->body.push_front(std::make_pair(x, y));    
 }

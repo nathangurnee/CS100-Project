@@ -7,6 +7,7 @@ const int PINEAPPLE_HEIGHT = 10;
 
 Pineapple::Pineapple() : Graphic(), renderer(NULL)
 {
+    collisions = 0;
     x = 10 + rand() % 634; 
     y = 10 + rand() % 634;
 }
@@ -33,10 +34,12 @@ void Pineapple::update(Graphic* snake)
 {
     // Checks whether the snake has collided with the pineapple 
     // and creates a new one if true
-    if((snake->x +16 >= x && snake->y + 16 >= y)
-        && (snake->x <= x + 10 && snake->y <= y + 10))
+    if((snake->body[0].first + 20 >= x && snake->body[0].second + 20 >= y)
+        && (snake->body[0].first <= x + PINEAPPLE_WIDTH && snake->body[0].second <= y + PINEAPPLE_HEIGHT))
     {
         setMovement(new PineappleMovement());
         movement->move(this);
+
+        collisions++;
     }
 }
