@@ -7,9 +7,9 @@ const int PINEAPPLE_HEIGHT = 10;
 
 Pineapple::Pineapple() : Graphic(), renderer(NULL)
 {
-    x = 10 + rand() % 604; 
-    y = 10 + rand() % 604;
     collisions = 0;
+    x = 10 + rand() % 634; 
+    y = 10 + rand() % 634;
 }
 
 void Pineapple::setRenderer(SDL_Renderer* renderer)
