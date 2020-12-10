@@ -47,5 +47,5 @@ The Strategy pattern is used for the `move` method of the `Snake` and the `Food`
  ## Installation/Usage
  In order to run this program the user will have to have previously installed SDL on their computer. Then the user will compile the program with make and cmake. To run the program the user will have to use ./make to generate the make file and then ./tests to run the tests.
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ To test our program we created unit tests for the separate functions in each one of our classes. Then we ran those unit tests through the google tests that we implemented.
  
