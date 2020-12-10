@@ -24,5 +24,21 @@ TEST(PineappleTest, testingRenderer) {
     ASSERT_TRUE(pineapple != nullptr);
 }
 
+TEST(PineappleTest, testingDraw) {
+    Graphic* pineapple = new Pineapple();
+
+    SDL_Window* window;
+    SDL_Renderer* renderer;
+    SDL_CreateWindowAndRenderer(720, 720, 0, &window, &renderer);
+
+    pineapple->draw();
+
+    SDL_DestroyWindow(window);
+    SDL_DestroyRenderer(renderer);
+
+    EXPECT_EQ(pineapple->x, 389);
+    EXPECT_EQ(pineapple->y, 89);
+}
+
 
 #endif //PINEAPPLE_TEST_CPP
