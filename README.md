@@ -20,7 +20,7 @@
  3. **Singleton** - There will only be a single instance of the snake being drawn over the course of the game. This snake will change in size and movement, but it will still be the same snake. This pattern will ensure that we use the same snake object every draw call.
 
 ## Class Diagram
- ![Class Diagram](/images/class-diagram.png)
+ ![Class Diagram](class-diagram.png)
  
 The `Graphic` abstract base class is the Component for our Composite design pattern. This contains the virtual `draw` method that is implemented by our derived classes. The `Board` class, the Composite, contains all the functionality of the game. Its `draw` method acts as the game loop, handling input and drawing the snake and food to the window. The `Snake` and `Food` Leaf classes are responsible for the attributes of the snake and food respectively. Their `draw` methods focus on their rendering set-up so the `Board` class can draw them during the game loop.
 
