@@ -21,9 +21,13 @@ add_executable(snake
 )
 
 add_executable(test
+    src/Image.cpp
+    src/Pineapple.cpp
+    src/PineappleMovement.cpp
     tests/unit_test.cpp
 )
 
 target_link_libraries(snake ${SDL2_LIBRARIES})
+target_link_libraries(test ${SDL2_LIBRARIES})
 TARGET_LINK_LIBRARIES(test gtest)
 TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)
