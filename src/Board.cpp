@@ -53,8 +53,14 @@ void Board::draw()
 
     bool play = true; // Checks if user has quit game
 
+    std::string title; // Holds title of game & score
+
     while (play)
     {
+        title = "Snake\t|\tScore: " + std::to_string(pineapple->collisions);
+
+        SDL_SetWindowTitle(window, title.c_str()); // Updates title
+
         if (SDL_PollEvent(&event))
         {
             if (event.type == SDL_QUIT) { play = false; }
