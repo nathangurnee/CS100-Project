@@ -46,5 +46,5 @@ void Pineapple::update(Graphic* snake)
 }
 void Pineapple::move()
 	{
-		if (movement != nullptr) { movement->move(this); 
+		if (movement != nullptr) { movement->move(this) }; 
 	}
