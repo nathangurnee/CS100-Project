@@ -24,7 +24,7 @@
  
 The `Graphic` abstract base class is the Component for our Composite design pattern. This contains the virtual `draw` method that is implemented by our derived classes. The `Board` class, the Composite, contains all the functionality of the game. Its `draw` method acts as the game loop, handling input and drawing the snake and food to the window. The `Snake` and `Food` Leaf classes are responsible for the attributes of the snake and food respectively. Their `draw` methods focus on their rendering set-up so the `Board` class can draw them during the game loop.
 
-The `Snake` class utilizes the Singleton design pattern. Its private constructor and static `getSnake` method allows only a single `Snake` instance to be created during the game.
+The `Image` class utilizes the Singleton design pattern. Its private constructor and static `getImage` method allows only a single `Image` instance to be created during the game.
 
 The Strategy pattern is used for the `move` method of the `Snake` and the `Food` classes. The Move Strategy differs depending on the type that is calling it, since each class features a unique movement pattern - the food is randomly placed in a spot on the board, and the snake is moved through keyboard input.  
  
