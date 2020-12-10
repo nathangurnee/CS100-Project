@@ -32,7 +32,15 @@ The Strategy pattern is used for the `move` method of the `Snake` and the `Food`
   ![Snake](snake.png)
   This shows the initialization of the snake game. We have the "pineapple" represented by an image of Bob the Tomato and the snake spawns in the middle.
  ## Installation/Usage
- In order to run this program the user will have to have previously installed SDL on their computer. Then the user will compile the program with make and cmake. To run the program the user will have to use ./make to generate the make file and then ./tests to run the tests.
+  Install SDL: https://www.libsdl.org/download-2.0.php
+  
+  To run:
+  
+  *cmake .*
+  
+  *make*
+  
+  *./snake*
  ## Testing
  To test our program we created unit tests for the separate functions in each one of our classes. Then we ran those unit tests through the google tests that we implemented.
  
