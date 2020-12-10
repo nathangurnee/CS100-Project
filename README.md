@@ -29,7 +29,8 @@ The `Image` class utilizes the Singleton design pattern. Its private constructor
 The Strategy pattern is used for the `move` method of the `Snake` and the `Food` classes. The Move Strategy differs depending on the type that is calling it, since each class features a unique movement pattern - the food is randomly placed in a spot on the board, and the snake is moved through keyboard input.  
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+  ![Snake](snake.png)
+  This shows the initialization of the snake game. We have the "pineapple" represented by an image of Bob the Tomato and the snake spawns in the middle.
  ## Installation/Usage
  In order to run this program the user will have to have previously installed SDL on their computer. Then the user will compile the program with make and cmake. To run the program the user will have to use ./make to generate the make file and then ./tests to run the tests.
  ## Testing
