@@ -2,14 +2,14 @@
 #include "../include/PineappleMovement.h"
 
 // Dimensions of pineapple
-const int PINEAPPLE_WIDTH = 10;
-const int PINEAPPLE_HEIGHT = 10;
+const int PINEAPPLE_WIDTH = 50;
+const int PINEAPPLE_HEIGHT = 50;
 
 Pineapple::Pineapple() : Graphic(), renderer(NULL)
 {
     collisions = 0;
-    x = 10 + rand() % 634; 
-    y = 10 + rand() % 634;
+    x = 40 + rand() % 634; 
+    y = 40 + rand() % 634;
 }
 
 void Pineapple::setRenderer(SDL_Renderer* renderer)
