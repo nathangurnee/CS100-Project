@@ -20,6 +20,7 @@ public:
     virtual void draw() = 0;
     virtual void update(Graphic*) {}
     void setMovement(Movement* movement) { this->movement = movement; }
+    virtual void move() {}
     double x, y; // Coordinates
     std::string direction;
     int collisions; // Holds number of collisions between snake & pineapple

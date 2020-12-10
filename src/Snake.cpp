@@ -77,4 +77,9 @@ void Snake::update(Graphic* pineapple)
 
     setMovement(new SnakeMovement());
     movement->move(this);
+
+}
+void Snake::move()
+{
+    if (movement !=nullptr) { movement->move(this);}
 }
