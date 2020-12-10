@@ -30,8 +30,6 @@ TEST(PineappleTest, testingDraw) {
     SDL_CreateWindowAndRenderer(720, 720, 0, &window, &renderer);
     Graphic* pineapple = new Pineapple();
 
-    Graphic* pineapple = new Pineapple();
-
     pineapple->draw();
 
 
