@@ -21,10 +21,12 @@ add_executable(snake
 )
 
 add_executable(test
-    src/Image.cpp
+    tests/unit_test.cpp
+    src/Snake.cpp
+    src/SnakeMovement.cpp
     src/Pineapple.cpp
     src/PineappleMovement.cpp
-    tests/unit_test.cpp
+    src/Image.cpp
 )
 
 target_link_libraries(snake ${SDL2_LIBRARIES})
