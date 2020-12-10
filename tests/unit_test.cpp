@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-
+#include "snakeAlgTest.h"
 #include "imageAlgTest.h"
 #include "pineappleAlgTest.h"
 

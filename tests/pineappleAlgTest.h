@@ -21,15 +21,19 @@ TEST(PineappleTest, testingRenderer) {
     SDL_CreateWindowAndRenderer(720, 720, 0, &window, &renderer);
     Graphic* pineapple = new Pineapple();
     pineapple->setRenderer(renderer);
+
+    SDL_DestroyWindow(window);
+    SDL_DestroyRenderer(renderer);
+
     ASSERT_TRUE(pineapple != nullptr);
 }
 
 TEST(PineappleTest, testingDraw) {
-    Graphic* pineapple = new Pineapple();
-
     SDL_Window* window;
     SDL_Renderer* renderer;
     SDL_CreateWindowAndRenderer(720, 720, 0, &window, &renderer);
+
+    Graphic* pineapple = new Pineapple();
 
     pineapple->draw();
 
