@@ -63,6 +63,17 @@ void Snake::update(Graphic* pineapple)
     }
 
     // - itself
+    for (unsigned i = 2; i < body.size(); i++)
+    {
+        if (body[0].first == body[i].first && body[0].second == body[i].second)
+        {
+            body.erase(body.begin() + 1, body.end() - 1);
+            body[0].first = SNAKE_SPAWN_X;
+            body[0].second = SNAKE_SPAWN_Y;
+            direction = "";
+            pineapple->collisions = 0;
+        }
+    }
 
     setMovement(new SnakeMovement());
     movement->move(this);
