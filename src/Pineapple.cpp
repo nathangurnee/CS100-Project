@@ -42,4 +42,9 @@ void Pineapple::update(Graphic* snake)
 
         collisions++;
     }
+
+	void Snake::move()
+	{
+		if (movement != nullptr) { movement->move(this); 
+	}
 }
